@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <title>SPB - Smart Plant Box</title>
+    <meta name="description" content="Smart Plant Box - The intelligent solution for automated plant care with monitoring, watering, and growth tracking.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 22V8' stroke='%2322c55e' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M12 12C12 8 8 4 4 4C4 8 8 12 12 12Z' fill='%2322c55e'/%3E%3Cpath d='M12 8C12 4 16 2 20 2C20 6 16 10 12 10' fill='%2322c55e'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&family=Suisse+Intl:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+</head>
+<body>
+    <!-- Text Loading Blur Overlay -->
+    <div id="text-blur-overlay" class="text-blur-overlay"></div>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="loader-dot"></div>
+            <div class="loader-dot"></div>
+            <div class="loader-dot"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header id="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 22V10" stroke="#22c55e" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M12 14C12 10 8 6 4 6C4 10 8 14 12 14Z" fill="#22c55e"/>
+                        <path d="M12 10C12 6 16 3 20 3C20 7 16 11 12 11" fill="#22c55e"/>
+                    </svg>
+                </div>
+                <span class="logo-text">SPB</span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#about">ABOUT</a></li>
+                <li class="nav-dropdown">
+                    <a href="#features" class="dropdown-trigger">
+                        FEATURES
+                        <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-content">
+                            <div class="dropdown-column">
+                                <span class="dropdown-label">//CORE FEATURES</span>
+                                <a href="#features" class="dropdown-link">SMART SENSORS</a>
+                                <a href="#features" class="dropdown-link">GROWTH LIGHTS</a>
+                                <a href="#features" class="dropdown-link">AUTO WATERING</a>
+                                <a href="#features" class="dropdown-link">1-CLICK SETUP™</a>
+                            </div>
+                            <div class="dropdown-column">
+                                <span class="dropdown-label">//TECHNOLOGY</span>
+                                <a href="#security" class="dropdown-link">REAL-TIME MONITORING</a>
+                                <a href="#gallery" class="dropdown-link">MOBILE APP</a>
+                                <a href="#about" class="dropdown-link">AI INTEGRATION</a>
+                                <a href="#about" class="dropdown-link">CLOUD STORAGE</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#gallery">GALLERY</a></li>
+                <li class="nav-dropdown">
+                    <a href="#pricing" class="dropdown-trigger">
+                        PRODUCTS
+                        <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-content">
+                            <div class="dropdown-column">
+                                <span class="dropdown-label">//PLANS</span>
+                                <a href="#pricing" class="dropdown-link">STANDARD</a>
+                                <a href="#pricing" class="dropdown-link">MEDIUM</a>
+                                <a href="#pricing" class="dropdown-link">LARGE</a>
+                            </div>
+                            <div class="dropdown-column">
+                                <span class="dropdown-label">//RESOURCES</span>
+                                <a href="#developers" class="dropdown-link">TEAM</a>
+                                <a href="#about" class="dropdown-link">DOCUMENTATION</a>
+                                <a href="#contact" class="dropdown-link">SUPPORT</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#developers">TEAM</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <a href="#contact" class="nav-link">LOG IN</a>
+                <a href="#pricing" class="btn-primary">GET STARTED</a>
+            </div>
+            
+            <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg-image"></div>
+        <div class="hero-content">
+            <p class="hero-tagline">Intelligent plant care technology</p>
+            <h1 class="hero-title">
+                The Smart Plant<br>
+                <span class="hero-highlight">Box</span>
+            </h1>
+            <div class="hero-actions">
+                <a href="#features" class="btn-cream">EXPLORE FEATURES</a>
+                <a href="#contact" class="btn-purple">TALK TO OUR TEAM</a>
+            </div>
+        </div>
+        <div class="floating-particles" id="particles"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-header">
+                <h2 class="section-title-large">
+                    Built for plants. Ready<br>
+                    for intelligence.
+                </h2>
+            </div>
+            
+            <div class="accordion-container">
+                <div class="accordion-item active" data-index="0">
+                    <div class="accordion-header">
+                        <span class="accordion-number">01<span class="slash">/</span></span>
+                        <h3 class="accordion-title">Automated watering. Precision care.</h3>
+                        <span class="accordion-toggle">−</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Get complete plant care integrating soil moisture sensors, automated watering, and smart scheduling into one system designed for peak plant performance.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item" data-index="1">
+                    <div class="accordion-header">
+                        <span class="accordion-number">02<span class="slash">/</span></span>
+                        <h3 class="accordion-title">Your garden. Your rules.</h3>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Customize every aspect of your plant care with adjustable growth lights, watering schedules, and environmental controls tailored to your plants' needs.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item" data-index="2">
+                    <div class="accordion-header">
+                        <span class="accordion-number">03<span class="slash">/</span></span>
+                        <h3 class="accordion-title">Monitoring, handled.</h3>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Track temperature, humidity, and light levels in real-time. Get alerts when conditions aren't optimal and let the system auto-adjust.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item" data-index="3">
+                    <div class="accordion-header">
+                        <span class="accordion-number">04<span class="slash">/</span></span>
+                        <h3 class="accordion-title">Mobile app included.</h3>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Capture daily photos, monitor growth progress, and control your Smart Plant Box remotely via our intuitive mobile application.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="features-header">
+                <h2 class="section-title-large">
+                    Technology that<br>
+                    scales with ambition
+                </h2>
+                <div class="features-subtitle">
+                    <div class="subtitle-line"></div>
+                    <p>From one plant to hundreds — performance that keeps pace.</p>
+                </div>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card large">
+                    <span class="feature-number">01<span class="slash">/</span></span>
+                    <h3 class="feature-title">Smart Sensors</h3>
+                    <p class="feature-desc">Advanced soil moisture, temperature, and humidity sensors for precise environmental monitoring and automated responses.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-number">03<span class="slash">/</span></span>
+                    <h3 class="feature-title">Growth Lights</h3>
+                    <p class="feature-desc">Customizable LED grow lights optimized for different plant species and growth stages.</p>
+                </div>
+                
+                <div class="feature-card center">
+                    <span class="feature-number">02<span class="slash">/</span></span>
+                    <h3 class="feature-title">1-Click Setup™</h3>
+                    <p class="feature-desc">Production-ready Smart Plant Box systems with instant WiFi connectivity and app pairing.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="floating-dots" id="feature-dots"></div>
+    </section>
+
+    <!-- Security Section -->
+    <section id="security" class="security-section">
+        <div class="container">
+            <div class="security-content">
+                <h2 class="section-title-large">
+                    Reliable by design.<br>
+                    Mission-critical<br>
+                    by default.
+                </h2>
+                <div class="security-text">
+                    <div class="text-line"></div>
+                    <p>Monitor your plants with real-time data, remote access, and smart alerts. Achieve peace of mind with automated care and 24/7 environmental monitoring.</p>
+                </div>
+                <a href="#pricing" class="btn-cream">EXPLORE PRODUCTS</a>
+            </div>
+            <div class="security-visual">
+                <div class="video-phone-container">
+                    <video id="spb-video" class="phone-video" muted loop playsinline>
+                        <source src="SPB add Phone part 5.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="orbit-container">
+                    <div class="orbit orbit-1"></div>
+                    <div class="orbit orbit-2"></div>
+                    <div class="orbit orbit-3"></div>
+                    <div class="orbit-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="gallery-header">
+                <h2 class="section-title-large">
+                    The engines of<br>
+                    plant intelligence
+                </h2>
+                <p class="gallery-subtitle">Give your plants the precision care they deserve with cutting-edge IoT technology.</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item main">
+                    <div class="gallery-image">
+                        <div class="placeholder-image">
+                            <i class="fas fa-seedling"></i>
+                            <span>Smart Plant Box Pro</span>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>SMART PLANT BOX PRO</h4>
+                        <p>Premium system optimized for plant care</p>
+                    </div>
+                    <div class="gallery-bar green"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <div class="placeholder-image">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>SENSOR MODULE</h4>
+                    </div>
+                    <div class="gallery-bar purple"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <div class="placeholder-image">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>GROW LIGHT</h4>
+                    </div>
+                    <div class="gallery-bar blue"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <div class="placeholder-image">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>MOBILE APP</h4>
+                    </div>
+                    <div class="gallery-bar orange"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Developers Section -->
+    <section id="developers" class="developers-section">
+        <div class="container">
+            <div class="section-heading-center">
+                <p class="section-label">THE TEAM</p>
+                <h2 class="section-title-large">Developers</h2>
+            </div>
+            
+            <div class="developer-card">
+                <div class="developer-image">
+                    <img src="images/user-1.jpg" alt="Zeyad Maher" class="developer-avatar">
+                </div>
+                <blockquote class="developer-quote">
+                    <p>"Building the Smart Plant Box was a great experience. It helped me apply my skills in automation and IoT in a real-world project."</p>
+                    <footer>
+                        <strong>Zeyad Maher</strong>
+                        <span>Program Developer</span>
+                    </footer>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="section-heading-center">
+                <p class="section-label">MAKE YOUR CHOICE</p>
+                <h2 class="section-title-large">We have the right products for you</h2>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 class="pricing-name">Standard</h3>
+                    <p class="pricing-sub">The standard size version</p>
+                    <div class="pricing-amount">
+                        <span class="currency">$</span>
+                        <span class="price">29</span>
+                    </div>
+                    <p class="pricing-note">Recommended to fit one plant</p>
+                    <ul class="pricing-features">
+                        <li>10-cm square</li>
+                        <li>No Display</li>
+                        <li>5-GB cloud storage</li>
+                        <li>No Voice Assistant</li>
+                        <li>1 year warranty</li>
+                    </ul>
+                    <a href="#" class="btn-outline">BUY NOW</a>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="featured-badge">POPULAR</div>
+                    <h3 class="pricing-name">Medium</h3>
+                    <p class="pricing-sub">The Medium size version</p>
+                    <div class="pricing-amount">
+                        <span class="currency">$</span>
+                        <span class="price">59</span>
+                    </div>
+                    <p class="pricing-note">Most popular choice</p>
+                    <ul class="pricing-features">
+                        <li>20-cm square</li>
+                        <li>Display included</li>
+                        <li>20-GB cloud storage</li>
+                        <li>Voice Assistant</li>
+                        <li>2 years warranty</li>
+                    </ul>
+                    <a href="#" class="btn-purple">BUY NOW</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3 class="pricing-name">Large</h3>
+                    <p class="pricing-sub">The Large size version</p>
+                    <div class="pricing-amount">
+                        <span class="currency">$</span>
+                        <span class="price">89</span>
+                    </div>
+                    <p class="pricing-note">Recommended for bigger plants</p>
+                    <ul class="pricing-features">
+                        <li>50-cm square</li>
+                        <li>Display included</li>
+                        <li>100-GB cloud storage</li>
+                        <li>Voice Assistant</li>
+                        <li>10 years warranty</li>
+                    </ul>
+                    <a href="#" class="btn-outline">BUY NOW</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 22V10" stroke="#22c55e" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M12 14C12 10 8 6 4 6C4 10 8 14 12 14Z" fill="#22c55e"/>
+                                <path d="M12 10C12 6 16 3 20 3C20 7 16 11 12 11" fill="#22c55e"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text">SPB</span>
+                    </div>
+                    <p class="footer-tagline">Smart Plant Box - The intelligent solution for automated plant care.</p>
+                </div>
+                
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/username" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://x.com/PeopleWPlants" target="_blank" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/smartplantapp/" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Smart Plant Box. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Chat Button -->
+    <div class="chat-widget">
+        <button class="chat-toggle" id="chat-toggle">
+            <div class="chat-toggle-icon">
+                <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M5 13c0-5.088 2.903-9.436 7-11.182C16.097 3.564 19 7.912 19 13c0 .823-.076 1.626-.22 2.403l1.94 1.832a.5.5 0 0 1 .095.603l-2.495 4.575a.5.5 0 0 1-.793.114l-2.234-2.234a1 1 0 0 0-.707-.293H9.414a1 1 0 0 0-.707.293l-2.234 2.234a.5.5 0 0 1-.793-.114l-2.495-4.575a.5.5 0 0 1 .095-.603l1.94-1.832C5.077 14.626 5 13.823 5 13zm1.476 6.696l.817-.817A3 3 0 0 1 9.414 18h5.172a3 3 0 0 1 2.121.879l.817.817.982-1.8-1.1-1.04a2 2 0 0 1-.593-1.82c.124-.664.187-1.345.187-2.036 0-3.87-1.995-7.3-5-8.96C8.995 5.7 7 9.13 7 13c0 .691.063 1.372.187 2.037a2 2 0 0 1-.593 1.82l-1.1 1.039.982 1.8zM12 13a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" fill="currentColor"></path>
+                </svg>
+            </div>
+            <span>AI</span>
+        </button>
+        
+        <div class="chat-box hidden" id="chat-box">
+            <div class="chat-header">
+            <div class="chat-header-info">
+                    <div class="chat-avatar">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 22V10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M12 14C12 10 8 6 4 6C4 10 8 14 12 14Z" fill="currentColor"/>
+                            <path d="M12 10C12 6 16 3 20 3C20 7 16 11 12 11" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="chat-header-text">
+                        <span class="chat-title">AI Assistant</span>
+                        <span class="chat-status">Online</span>
+                    </div>
+                </div>
+                <button class="chat-close" id="chat-close">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <div class="message bot">
+                    <div class="message-avatar">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 22V10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M12 14C12 10 8 6 4 6C4 10 8 14 12 14Z" fill="currentColor"/>
+                            <path d="M12 10C12 6 16 3 20 3C20 7 16 11 12 11" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="message-content">
+                        <p>Hello! How can I assist you with your Smart Plant Box today?</p>
+                    </div>
+                </div>
+            </div>
+            <form class="chat-input" id="chat-form">
+                <textarea id="chat-input-field" placeholder="Type your message..." rows="1"></textarea>
+                <button type="submit" class="chat-send">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
