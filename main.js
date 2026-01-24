@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initVideoAutoPlay();
     initTextBlurAnimation();
     initProductGallery();
+    initBackToTop();
 });
 
 // ============================================
@@ -536,6 +537,26 @@ function initVideoAutoPlay() {
     const securitySection = document.getElementById('security');
     if (securitySection) {
         videoObserver.observe(securitySection);
+    }
+}
+
+// ============================================
+// BACK TO TOP
+// ============================================
+function initBackToTop() {
+    const backToTop = document.querySelector('.back-to-top');
+    if (backToTop) {
+        backToTop.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (window.lenis) {
+                window.lenis.scrollTo('#hero', {
+                    duration: 1.5,
+                    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+                });
+            } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
     }
 }
 
