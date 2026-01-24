@@ -25,6 +25,7 @@
     --color-purple: #a855f7;
     --color-purple-light: #c084fc;
     --color-green: #22c55e;
+    --color-green-bright: #4ade80;
     --color-blue: #3b82f6;
     --color-orange: #f97316;
     
@@ -498,8 +499,6 @@ img {
     margin-bottom: var(--spacing-xl);
     color: var(--color-title);
 }
-
-
 
 .hero-highlight {
     color: var(--color-title);
@@ -1585,8 +1584,10 @@ img {
 .footer-content {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: var(--spacing-xl);
+    flex-wrap: wrap;
+    gap: var(--spacing-xl);
 }
 
 .footer-brand .logo {
@@ -1597,6 +1598,37 @@ img {
     font-family: var(--font-mono);
     font-size: 0.75rem;
     color: var(--color-text-muted);
+}
+
+/* Footer Links Grid - TRAE Style */
+.footer-links-grid {
+    display: flex;
+    gap: var(--spacing-3xl);
+}
+
+.footer-links-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.footer-links-title {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    letter-spacing: 0.1em;
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer-link {
+    font-family: var(--font-primary);
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    transition: color var(--transition-fast);
+}
+
+.footer-link:hover {
+    color: var(--color-text-primary);
 }
 
 .footer-social {
@@ -1624,13 +1656,105 @@ img {
 .footer-bottom {
     padding-top: var(--spacing-lg);
     border-top: 1px solid var(--color-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
 }
 
 .footer-bottom p {
     font-family: var(--font-mono);
     font-size: 0.75rem;
     color: var(--color-text-muted);
-    text-align: center;
+}
+
+.footer-bottom-center {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.footer-social-icon {
+    color: var(--color-text-secondary);
+    transition: color var(--transition-fast);
+}
+
+.footer-social-icon:hover {
+    color: var(--color-text-primary);
+}
+
+.back-to-top {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    transition: color var(--transition-fast);
+    cursor: pointer;
+}
+
+.back-to-top:hover {
+    color: var(--color-text-primary);
+}
+
+.back-to-top i {
+    font-size: 0.625rem;
+}
+
+/* ============================================
+   GIANT FOOTER BANNER - TRAE.AI STYLE
+   ============================================ */
+.giant-footer-banner {
+    background: var(--color-purple);
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.giant-text-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+}
+
+.giant-letter {
+    font-family: var(--font-title);
+    font-size: clamp(150px, 30vw, 400px);
+    font-weight: 900;
+    color: var(--color-bg);
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+    display: inline-block;
+}
+
+.giant-diamond {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: clamp(80px, 15vw, 200px);
+    height: clamp(80px, 15vw, 200px);
+}
+
+.giant-diamond svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive Giant Footer */
+@media (max-width: 768px) {
+    .giant-letter {
+        font-size: clamp(80px, 25vw, 200px);
+    }
+    
+    .giant-diamond {
+        width: 60px;
+        height: 60px;
+        right: 3%;
+    }
 }
 
 /* ============================================
@@ -1910,6 +2034,10 @@ img {
     .gallery-item.main {
         grid-row: span 1;
     }
+    
+    .footer-links-grid {
+        gap: var(--spacing-xl);
+    }
 }
 
 @media (max-width: 992px) {
@@ -1943,6 +2071,15 @@ img {
     
     .gallery-subtitle {
         text-align: left;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .footer-links-grid {
+        flex-wrap: wrap;
     }
 }
 
@@ -1983,6 +2120,11 @@ img {
     .footer-content {
         flex-direction: column;
         gap: var(--spacing-lg);
+        text-align: center;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
         text-align: center;
     }
     
