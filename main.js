@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     initVideoAutoPlay();
     initTextBlurAnimation();
+    initProductGallery();
 });
 
 // ============================================
@@ -565,4 +566,74 @@ function throttle(func, limit) {
             setTimeout(() => inThrottle = false, limit);
         }
     };
+}
+
+// ============================================
+// PRODUCT GALLERY - Apple Style Slideshow
+// ============================================
+function initProductGallery() {
+    const gallery = document.querySelector('.product-gallery');
+    if (!gallery) return;
+
+    const slides = gallery.querySelectorAll('.gallery-slide');
+    const dots = gallery.querySelectorAll('.gallery-dot');
+    const playBtn = gallery.querySelector('.gallery-play');
+    
+    let currentIndex = 0;
+    let isPlaying = false;
+    let autoplayInterval = null;
+
+    function goToSlide(index) {
+        // Remove active from all
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        // Set new active
+        currentIndex = index;
+        slides[currentIndex].classList.add('active');
+        dots[currentIndex].classList.add('active');
+    }
+
+    function nextSlide() {
+        const next = (currentIndex + 1) % slides.length;
+        goToSlide(next);
+    }
+
+    function startAutoplay() {
+        if (autoplayInterval) return;
+        isPlaying = true;
+        playBtn.classList.add('playing');
+        autoplayInterval = setInterval(nextSlide, 3000);
+    }
+
+    function stopAutoplay() {
+        isPlaying = false;
+        playBtn.classList.remove('playing');
+        if (autoplayInterval) {
+            clearInterval(autoplayInterval);
+            autoplayInterval = null;
+        }
+    }
+
+    // Dot navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            stopAutoplay();
+            goToSlide(index);
+        });
+    });
+
+    // Play button toggle
+    if (playBtn) {
+        playBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                stopAutoplay();
+            } else {
+                startAutoplay();
+            }
+        });
+    }
+
+    // Initialize first slide
+    goToSlide(0);
 }
