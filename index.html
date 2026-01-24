@@ -129,56 +129,88 @@
 
     <!-- About Section -->
     <section id="about" class="about-section">
-        <div class="container">
-            <div class="about-header">
-                <h2 class="section-title-large">
-                    Built for plants. Ready<br>
-                    for intelligence.
-                </h2>
+        <div class="container about-layout">
+            <div class="about-left">
+                <div class="about-header">
+                    <h2 class="section-title-large">
+                        Built for plants. Ready<br>
+                        for intelligence.
+                    </h2>
+                </div>
+                
+                <div class="accordion-container">
+                    <div class="accordion-item active" data-index="0">
+                        <div class="accordion-header">
+                            <span class="accordion-number">01<span class="slash">/</span></span>
+                            <h3 class="accordion-title">Automated watering. Precision care.</h3>
+                            <span class="accordion-toggle">−</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Get complete plant care integrating soil moisture sensors, automated watering, and smart scheduling into one system designed for peak plant performance.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item" data-index="1">
+                        <div class="accordion-header">
+                            <span class="accordion-number">02<span class="slash">/</span></span>
+                            <h3 class="accordion-title">Your garden. Your rules.</h3>
+                            <span class="accordion-toggle">+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Customize every aspect of your plant care with adjustable growth lights, watering schedules, and environmental controls tailored to your plants' needs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item" data-index="2">
+                        <div class="accordion-header">
+                            <span class="accordion-number">03<span class="slash">/</span></span>
+                            <h3 class="accordion-title">Monitoring, handled.</h3>
+                            <span class="accordion-toggle">+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Track temperature, humidity, and light levels in real-time. Get alerts when conditions aren't optimal and let the system auto-adjust.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item" data-index="3">
+                        <div class="accordion-header">
+                            <span class="accordion-number">04<span class="slash">/</span></span>
+                            <h3 class="accordion-title">Mobile app included.</h3>
+                            <span class="accordion-toggle">+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Capture daily photos, monitor growth progress, and control your Smart Plant Box remotely via our intuitive mobile application.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             
-            <div class="accordion-container">
-                <div class="accordion-item active" data-index="0">
-                    <div class="accordion-header">
-                        <span class="accordion-number">01<span class="slash">/</span></span>
-                        <h3 class="accordion-title">Automated watering. Precision care.</h3>
-                        <span class="accordion-toggle">−</span>
+            <div class="about-right">
+                <div class="product-gallery">
+                    <div class="gallery-showcase">
+                        <div class="gallery-slides">
+                            <div class="gallery-slide active">
+                                <img src="images/smart-plant-box-1.jpg" alt="Smart Plant Box - Front view">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/smart-plant-box-4.jpg" alt="Smart Plant Box - Display">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/smart-plant-box-5.jpg" alt="Smart Plant Box - Lights">
+                            </div>
+                        </div>
                     </div>
-                    <div class="accordion-content">
-                        <p>Get complete plant care integrating soil moisture sensors, automated watering, and smart scheduling into one system designed for peak plant performance.</p>
-                    </div>
-                </div>
-                
-                <div class="accordion-item" data-index="1">
-                    <div class="accordion-header">
-                        <span class="accordion-number">02<span class="slash">/</span></span>
-                        <h3 class="accordion-title">Your garden. Your rules.</h3>
-                        <span class="accordion-toggle">+</span>
-                    </div>
-                    <div class="accordion-content">
-                        <p>Customize every aspect of your plant care with adjustable growth lights, watering schedules, and environmental controls tailored to your plants' needs.</p>
-                    </div>
-                </div>
-                
-                <div class="accordion-item" data-index="2">
-                    <div class="accordion-header">
-                        <span class="accordion-number">03<span class="slash">/</span></span>
-                        <h3 class="accordion-title">Monitoring, handled.</h3>
-                        <span class="accordion-toggle">+</span>
-                    </div>
-                    <div class="accordion-content">
-                        <p>Track temperature, humidity, and light levels in real-time. Get alerts when conditions aren't optimal and let the system auto-adjust.</p>
-                    </div>
-                </div>
-                
-                <div class="accordion-item" data-index="3">
-                    <div class="accordion-header">
-                        <span class="accordion-number">04<span class="slash">/</span></span>
-                        <h3 class="accordion-title">Mobile app included.</h3>
-                        <span class="accordion-toggle">+</span>
-                    </div>
-                    <div class="accordion-content">
-                        <p>Capture daily photos, monitor growth progress, and control your Smart Plant Box remotely via our intuitive mobile application.</p>
+                    <div class="gallery-controls">
+                        <div class="gallery-dots">
+                            <span class="gallery-dot active" data-index="0"></span>
+                            <span class="gallery-dot" data-index="1"></span>
+                            <span class="gallery-dot" data-index="2"></span>
+                        </div>
+                        <button class="gallery-play" aria-label="Play slideshow">
+                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                                <path d="M4 2L14 8L4 14V2Z" fill="currentColor"/>
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -241,7 +273,7 @@
             <div class="security-visual">
                 <div class="video-phone-container">
                     <video id="spb-video" class="phone-video" muted loop playsinline>
-                        <source src="video/SPB add Phone part 5.mp4" type="video/mp4">
+                        <source src="SPB add Phone part 5.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="orbit-container">
@@ -314,6 +346,57 @@
                         <h4>MOBILE APP</h4>
                     </div>
                     <div class="gallery-bar orange"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Circuit Section -->
+    <section id="circuit" class="circuit-section">
+        <div class="container">
+            <div class="circuit-layout">
+                <div class="circuit-image-container">
+                    <img src="images/SPB-Circuit.jpg" alt="Smart Plant Box Circuit Diagram" class="circuit-image">
+                </div>
+                <div class="circuit-content">
+                    <span class="circuit-label">//SYSTEM ARCHITECTURE</span>
+                    <h2 class="section-title-medium">Circuit Design</h2>
+                    <p class="circuit-description">
+                        The Smart Plant Box is powered by an <strong>ESP32s microcontroller</strong> — the brain of the entire system. It coordinates all sensors and actuators through carefully designed GPIO connections.
+                    </p>
+                    <div class="circuit-features">
+                        <div class="circuit-feature">
+                            <span class="feature-icon"><i class="fas fa-thermometer-half"></i></span>
+                            <div>
+                                <h4>Environmental Sensors</h4>
+                                <p>Soil moisture sensor, temperature sensor, and potentiometer for real-time monitoring and threshold adjustments.</p>
+                            </div>
+                        </div>
+                        <div class="circuit-feature">
+                            <span class="feature-icon"><i class="fas fa-camera"></i></span>
+                            <div>
+                                <h4>ESP32-CAM Module</h4>
+                                <p>Captures daily plant photos for growth tracking and AI-powered health analysis via UART communication.</p>
+                            </div>
+                        </div>
+                        <div class="circuit-feature">
+                            <span class="feature-icon"><i class="fas fa-tint"></i></span>
+                            <div>
+                                <h4>Automated Watering</h4>
+                                <p>Water pump motor controlled via GPIO23, activated automatically when soil moisture drops below threshold.</p>
+                            </div>
+                        </div>
+                        <div class="circuit-feature">
+                            <span class="feature-icon"><i class="fas fa-sun"></i></span>
+                            <div>
+                                <h4>UV Growth Light</h4>
+                                <p>MOSFET-controlled grow light providing optimal light spectrum for photosynthesis and plant growth.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="Smart_Plant_Box_Proposal_2.pdf" target="_blank" class="btn-outline-green">
+                        <i class="fas fa-file-pdf"></i> View Project Proposal
+                    </a>
                 </div>
             </div>
         </div>
